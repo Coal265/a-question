@@ -44,14 +44,12 @@ body {
     width: 100%;
     float: right;
     position: absolute;
-    background-color: blue;
     display: inline;
     margin: none;
 }
 .lights2 {
     float: right;
     position: absolute;
-    background-color: blue;
     display: inline;
     height: 200px;
     width: 100%;
@@ -62,4 +60,77 @@ body {
     width: 100%;
     height: 40px;
     background-color: lime;
+}
+.light1a {
+   width: 100px;
+   height: 100px;
+   position: absolute;
+   background-color: aqua;
+   display: inline;
+   left: 20px;
+   top: 30px;
+}
+.light1b {
+    width: 100px;
+   height: 100px;
+   position: absolute;
+   background-color: aqua;
+   display: inline;
+   left: 140px;
+   top: 30px;
+}
+.light1c {
+    width: 100px;
+   height: 100px;
+   position: absolute;
+   background-color: aqua;
+   display: inline;
+   left: 260px;
+   top: 30px;
+
+}
+.light2a {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    background-color: aqua;
+    display: inline;
+    left: 20px;
+   top: 30px;
+}
+.light2b {
+    width: 100px;
+   height: 100px;
+   position: absolute;
+   background-color: aqua;
+   display: inline;
+   left: 140px;
+   top: 30px;
+}
+.light2c {
+    width: 100px;
+   height: 100px;
+   position: absolute;
+   background-color: aqua;
+   display: inline;
+   left: 260px;
+   top: 30px;
+}
+.ai {
+
+}
+.button1 {
+
+}
+.button2 {
+    
+}
+.button3 {
+    
+}
+.button4 {
+    
+}
+.sideshit2 {
+    
 }

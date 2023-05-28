@@ -1,2 +1,2 @@
-# a questionis a game
-version 0.1
+# a question is a game
+version 0.2

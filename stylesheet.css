@@ -123,22 +123,57 @@ body {
    top: 30px;
 }
 .ai {
-
+   width: 700px;
+   height: 700px;
+   border-radius: 50%;
+   background-color: yellow;
+   left: 20px;
+   display: inline-block;
+   position: relative;
+   top: 40px;
 }
 .button1 {
-
+   width: 350px;
+   height: 100px;
+   background-color: greenyellow;
+   position: absolute;
+   left: 750px;
+   top: 100px;
 }
 .button2 {
-    
-}
+    width: 350px;
+   height: 100px;
+   background-color: greenyellow;
+   position: absolute;
+   left: 750px;
+   top: 280px;
+}  
 .button3 {
-    
+    width: 350px;
+   height: 100px;
+   background-color: greenyellow;
+   position: absolute;
+   left: 750px;
+   top: 430px;
 }
 .button4 {
-    
+    width: 350px;
+   height: 100px;
+   background-color: greenyellow;
+   position: absolute;
+   left: 750px;
+   top: 600px;
+}
+.main2 {
+    width: 75%;
+    height: 800px;
+    float: left;
 }
 .sideshit2 {
-    
+    width: 25%;
+    height: 800px;
+    background-color: yellow;
+    float: right;
 }
 a.email {
     color: rgb(157, 0, 255);

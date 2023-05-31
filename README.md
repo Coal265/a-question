@@ -1,2 +1,2 @@
-# a question is a game
-version 0.2
+# a question is a short web like game
+version 0.3

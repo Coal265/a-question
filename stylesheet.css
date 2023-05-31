@@ -1,4 +1,4 @@
-h1 {
+#Heading {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: rgb(157, 0, 255);
     position: relative;
@@ -7,7 +7,7 @@ h1 {
     margin-bottom: 10px;
     
 }
-h1:hover {
+#Heading:hover {
     color: rgb(157, 0, 255);
     text-shadow: 3px 3px 4px rgb(255, 0, 255);
     cursor: crosshair;
@@ -182,6 +182,21 @@ a.email {
     left: 45%;
     font-size: 30px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+a.email:hover::after {
+    color: rgb(157, 0, 255);
+    text-shadow: 3px 3px 4px rgb(255, 0, 255);
+    cursor: crosshair;
+    opacity: 1;
+}
+a.email::after {
+  content: ":)";
+  position: absolute;
+  top: 0%;
+  left: 100%;
+  color: rgb(255, 0, 255);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
 }
 a.email:hover {
     color: rgb(157, 0, 255);

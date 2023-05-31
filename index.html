@@ -6,7 +6,34 @@
     <link rel="icon" type="image/x-icon" href="icon.ico">
 </head>
 <body>
-    <h1>Ask questions, get answers!</h1>
+    <h1 id="Heading">Ask questions, get answers!</h1>
+    <script>
+        const heading = document.getElementById("Heading");
+
+        // Function to apply the text shadow effect
+        function applyTextShadow() {
+            heading.style.textShadow = "2px 2px 4px rgb(255, 0, 255, 5.5)";
+        }
+
+        // Function to remove the text shadow effect
+        function removeTextShadow() {
+            heading.style.textShadow = "none";
+        }
+
+        // Function to control the blink effect
+        function blinkEffect() {
+            applyTextShadow();
+            setTimeout(removeTextShadow, 1000);
+            setTimeout(applyTextShadow, 1300);
+            setTimeout(removeTextShadow, 2000);
+        }
+
+        // Initial call to start the effect
+        blinkEffect();
+
+        // Set interval to repeat the effect every 5 seconds
+        setInterval(blinkEffect, 5000);
+    </script>
     <div class="main">
         <div class="main2">
         <div class="ai"></div>
@@ -31,7 +58,7 @@
     </div>
     </div>
     <div class="contact">
-        <a class="email" href="mailto:pajta.tomas@gmail.com">Contact Email:)</a>
+        <a class="email" href="mailto:pajta.tomas@gmail.com">Contact Email</a>
     </div>
 </body>    
 </html>

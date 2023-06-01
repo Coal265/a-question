@@ -37,7 +37,6 @@ body {
 .side {
     height: 400px;
     width: 100%;
-    background-color: brown;
     display: inline;
     position: absolute;
     float: right;
@@ -71,7 +70,6 @@ body {
    width: 100px;
    height: 100px;
    position: absolute;
-   background-color: aqua;
    display: inline;
    left: 20px;
    top: 30px;
@@ -80,7 +78,6 @@ body {
     width: 100px;
    height: 100px;
    position: absolute;
-   background-color: aqua;
    display: inline;
    left: 140px;
    top: 30px;
@@ -89,7 +86,6 @@ body {
     width: 100px;
    height: 100px;
    position: absolute;
-   background-color: aqua;
    display: inline;
    left: 260px;
    top: 30px;
@@ -99,7 +95,6 @@ body {
     width: 100px;
     height: 100px;
     position: absolute;
-    background-color: aqua;
     display: inline;
     left: 20px;
    top: 30px;
@@ -108,7 +103,6 @@ body {
     width: 100px;
    height: 100px;
    position: absolute;
-   background-color: aqua;
    display: inline;
    left: 140px;
    top: 30px;
@@ -117,7 +111,6 @@ body {
     width: 100px;
    height: 100px;
    position: absolute;
-   background-color: aqua;
    display: inline;
    left: 260px;
    top: 30px;
@@ -172,8 +165,11 @@ body {
 .sideshit2 {
     width: 25%;
     height: 800px;
-    background-color: yellow;
+    background-color: rgb(4, 0, 61);
     float: right;
+    color: rgb(171, 37, 255);
+    word-break: break-all;
+    white-space: normal;
 }
 a.email {
     color: rgb(157, 0, 255);

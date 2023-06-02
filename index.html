@@ -4,6 +4,44 @@
     <link rel="stylesheet" href="stylesheet.css">
     <title>A question</title>
     <link rel="icon" type="image/x-icon" href="icon.ico">
+    <script>
+        document.addEventListener('contextmenu', function(e) {
+          e.preventDefault();
+        });
+      </script>
+      <script>
+        var button1Clicked = false;
+        var button2Clicked = false;
+        var button3Clicked = false;
+    
+        function displayText(buttonId) {
+          var text = "";
+    
+          if (buttonId === "button1") {
+            text = "Text for Button 1";
+            button1Clicked = true;
+          } else if (buttonId === "button2") {
+            text = "Text for Button 2";
+            button2Clicked = true;
+          } else if (buttonId === "button3") {
+            text = "Text for Button 3";
+            button3Clicked = true;
+          } else if (buttonId === "specialButton") {
+            if (button1Clicked && button2Clicked && button3Clicked) {
+              text = "Congratulations! You pressed all three buttons.";
+            } else {
+              text = "Please press all three buttons first.";
+            }
+          }
+    
+          document.getElementById('result').textContent = text;
+    
+          // Update button text
+          document.getElementById('button1').textContent = "New Button 1";
+          document.getElementById('button2').textContent = "New Button 2";
+          document.getElementById('button3').textContent = "New Button 3";
+        }
+      </script>
 </head>
 <body>
     <h1 id="Heading">Ask questions, get answers!</h1>
@@ -37,10 +75,23 @@
     <div class="main">
         <div class="main2">
         <div class="ai"></div>
-        <div class="button1"></div>
-        <div class="button2"></div>
-        <div class="button3"></div>
-        <div class="button4"></div>
+        <div class="button1">
+            <button id="button1" onclick="displayText('button1')">Button 1</button>
+  <button id="button2" onclick="displayText('button2')">Button 2</button>
+  <button id="button3" onclick="displayText('button3')">Button 3</button>
+  <button id="specialButton" onclick="displayText('specialButton')">Special Button</button>
+
+  <div id="result"></div>
+        </div>
+        <div class="button2">
+            <button>ggg</button>
+        </div>
+        <div class="button3">
+            <button>ggg</button>
+        </div>
+        <div class="button4">
+            <button>ggg</button>
+        </div>
         </div>
         <div class="sideshit2">
         <p>Fuck you!</p>

@@ -42,66 +42,30 @@
     <div class="main">
         <div class="main2">
         <div class="ai"></div>
-        <div class="button1">
-            <button id="button1" onclick="displayText('button1')">Button 1</button>
-  <button id="button2" onclick="displayText('button2')">Button 2</button>
-  <button id="button3" onclick="displayText('button3')">Button 3</button>
-  <button id="specialButton" onclick="displayText('specialButton')">Special Button</button>
-
-  <div id="result"></div>
+        <div class="buttona">
+            <button class="buttonStyle" onclick="myFunction()">How does society function?</button>      
+  </div>
+  <script>
+ function myFunction() {
+  alert("Fuck you");
+}
+    </script>
+        
+        <div class="buttonb">
+            <button class="buttonStyle"  onclick="myFunction()">How much people died in wars?</button>
         </div>
-        <div class="button2">
-            <button>ggg</button>
+        <div class="buttonc">
+            <button class="buttonStyle"  onclick="myFunction()">Is humanity bad?</button>
         </div>
-        <div class="button3">
-            <button>ggg</button>
-        </div>
-        <div class="button4">
-            <button>ggg</button>
+        <div class="buttond">
+            <button class="buttonStyle"  onclick="myFunction()">What is slavery?</button>
         </div>
         </div>
         <div class="sideshit2">
-            <button class="normal-button" id="button1">Button 1</button>
-            <button class="normal-button" id="button2">Button 2</button>
-            <button class="normal-button" id="button3">Button 3</button>
-            <button class="special-button" id="specialButton">Special Button</button>
+            
+              
         </div>
-        <script>
-        // Variables to track button clicks
-let normalButtonClickCount = 0;
-let specialButtonClickCount = 0;
-
-// Array of special button outputs
-const specialButtonOutputs = ["Output 1", "Output 2", "Output 3", "Output 4", "Output 5"];
-
-// Function to handle button clicks
-function handleButtonClick(event) {
-  const buttonId = event.target.id;
-
-  if (buttonId === "specialButton") {
-    specialButtonClickCount++;
-    document.getElementById("specialButton").textContent = specialButtonOutputs[specialButtonClickCount - 1];
-  } else {
-    normalButtonClickCount++;
-    if (normalButtonClickCount === 3) {
-      normalButtonClickCount = 0;
-      changeNormalButtons();
-    }
-  }
-}
-
-// Function to change normal buttons
-function changeNormalButtons() {
-  document.getElementById("button1").textContent = "Button 4";
-  document.getElementById("button2").textContent = "Button 5";
-  document.getElementById("button3").textContent = "Button 6";
-}
-
-// Add event listeners to buttons
-const buttons = document.querySelectorAll(".normal-button, .special-button");
-buttons.forEach((button) => {
-  button.addEventListener("click", handleButtonClick);
-});
+        
 </script>
 
     </div>

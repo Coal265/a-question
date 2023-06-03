@@ -9,39 +9,6 @@
           e.preventDefault();
         });
       </script>
-      <script>
-        var button1Clicked = false;
-        var button2Clicked = false;
-        var button3Clicked = false;
-    
-        function displayText(buttonId) {
-          var text = "";
-    
-          if (buttonId === "button1") {
-            text = "Text for Button 1";
-            button1Clicked = true;
-          } else if (buttonId === "button2") {
-            text = "Text for Button 2";
-            button2Clicked = true;
-          } else if (buttonId === "button3") {
-            text = "Text for Button 3";
-            button3Clicked = true;
-          } else if (buttonId === "specialButton") {
-            if (button1Clicked && button2Clicked && button3Clicked) {
-              text = "Congratulations! You pressed all three buttons.";
-            } else {
-              text = "Please press all three buttons first.";
-            }
-          }
-    
-          document.getElementById('result').textContent = text;
-    
-          // Update button text
-          document.getElementById('button1').textContent = "New Button 1";
-          document.getElementById('button2').textContent = "New Button 2";
-          document.getElementById('button3').textContent = "New Button 3";
-        }
-      </script>
 </head>
 <body>
     <h1 id="Heading">Ask questions, get answers!</h1>
@@ -94,8 +61,49 @@
         </div>
         </div>
         <div class="sideshit2">
-        <p>Fuck you!</p>
+            <button class="normal-button" id="button1">Button 1</button>
+            <button class="normal-button" id="button2">Button 2</button>
+            <button class="normal-button" id="button3">Button 3</button>
+            <button class="special-button" id="specialButton">Special Button</button>
         </div>
+        <script>
+        // Variables to track button clicks
+let normalButtonClickCount = 0;
+let specialButtonClickCount = 0;
+
+// Array of special button outputs
+const specialButtonOutputs = ["Output 1", "Output 2", "Output 3", "Output 4", "Output 5"];
+
+// Function to handle button clicks
+function handleButtonClick(event) {
+  const buttonId = event.target.id;
+
+  if (buttonId === "specialButton") {
+    specialButtonClickCount++;
+    document.getElementById("specialButton").textContent = specialButtonOutputs[specialButtonClickCount - 1];
+  } else {
+    normalButtonClickCount++;
+    if (normalButtonClickCount === 3) {
+      normalButtonClickCount = 0;
+      changeNormalButtons();
+    }
+  }
+}
+
+// Function to change normal buttons
+function changeNormalButtons() {
+  document.getElementById("button1").textContent = "Button 4";
+  document.getElementById("button2").textContent = "Button 5";
+  document.getElementById("button3").textContent = "Button 6";
+}
+
+// Add event listeners to buttons
+const buttons = document.querySelectorAll(".normal-button, .special-button");
+buttons.forEach((button) => {
+  button.addEventListener("click", handleButtonClick);
+});
+</script>
+
     </div>
     <div class="sideshit">
         

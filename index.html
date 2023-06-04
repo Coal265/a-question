@@ -44,26 +44,64 @@
         <div class="main2">
         <div class="ai"></div>
         <div class="buttona">
-            <button class="buttonStyle" onclick="myFunction()">How does society function?</button>      
+            <button class="buttonStyle" id="button1">How does society function?</button>      
   </div>
   <script>
- function myFunction() {
-  alert("Fuck you");
-}
-    </script>
+    document.addEventListener('DOMContentLoaded', function() {
+const button1 = document.getElementById("button1");
+const output1 = document.getElementById("output1");
+
+button1.addEventListener('click', function() {
+output1.style.display = 'inline';
+});
+});
+     </script>
         
         <div class="buttonb">
-            <button class="buttonStyle"  onclick="myFunction()">How much people died in wars?</button>
+            <button class="buttonStyle"  id="button2">How much people died in wars?</button>
         </div>
+        <script>
+           document.addEventListener('DOMContentLoaded', function() {
+  const button1 = document.getElementById("button2");
+  const output1 = document.getElementById("output2");
+  
+  button1.addEventListener('click', function() {
+    output1.style.display = 'inline';
+  });
+});
+            </script>
         <div class="buttonc">
-            <button class="buttonStyle"  onclick="myFunction()">Is humanity bad?</button>
+            <button class="buttonStyle"  id="button3">Is humanity bad?</button>
         </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+   const button1 = document.getElementById("button3");
+   const output1 = document.getElementById("output3");
+   
+   button1.addEventListener('click', function() {
+     output1.style.display = 'inline';
+   });
+ });
+             </script>
         <div class="buttond">
-            <button class="buttonStyle"  onclick="myFunction()">What is slavery?</button>
+            <button class="buttonStyle"  id="button4">What is slavery?</button>
         </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+   const button1 = document.getElementById("button4");
+   const output1 = document.getElementById("output4");
+   
+   button1.addEventListener('click', function() {
+     output1.style.display = 'inline';
+   });
+ });
+             </script>
         </div>
         <div class="sideshit2">
-            
+            <p id="output1" style="display: none;">This is the paragraph element1.</p>
+            <p id="output2" style="display: none;">This is the paragraph element2.</p>
+            <p id="output3" style="display: none;">This is the paragraph element3.</p>
+            <p id="output4" style="display: none;">This is the paragraph element4.</p>
               
         </div>
         

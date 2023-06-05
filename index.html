@@ -10,6 +10,25 @@
           e.preventDefault();
         });
       </script>
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const buttons = document.querySelectorAll('.buttonStyle');
+            const paragraphs = document.querySelectorAll('.sideshit2 p');
+    
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    paragraphs.forEach(paragraph => {
+                        paragraph.style.display = 'none';
+                    });
+    
+                    const outputId = this.getAttribute('data-output');
+                    const output = document.getElementById(outputId);
+                    output.style.display = 'inline';
+                });
+            });
+        });
+    </script>
+    
 </head>
 <body>
     <h1 id="Heading">Ask questions, get answers!</h1>
@@ -44,7 +63,7 @@
         <div class="main2">
         <div class="ai"></div>
         <div class="buttona">
-            <button class="buttonStyle" id="button1">How does society function?</button>      
+            <button class="buttonStyle" id="button1" >How does society function?</button>      
   </div>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -58,7 +77,7 @@ output1.style.display = 'inline';
      </script>
         
         <div class="buttonb">
-            <button class="buttonStyle"  id="button2">How much people died in wars?</button>
+            <button class="buttonStyle"  id="button2" >How much people died in wars?</button>
         </div>
         <script>
            document.addEventListener('DOMContentLoaded', function() {
@@ -71,7 +90,7 @@ output1.style.display = 'inline';
 });
             </script>
         <div class="buttonc">
-            <button class="buttonStyle"  id="button3">Is humanity bad?</button>
+            <button class="buttonStyle"  id="button3" >Is humanity bad?</button>
         </div>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
@@ -84,7 +103,7 @@ output1.style.display = 'inline';
  });
              </script>
         <div class="buttond">
-            <button class="buttonStyle"  id="button4">What is slavery?</button>
+            <button class="buttonStyle"  id="button4" >What is slavery?</button>
         </div>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
@@ -98,12 +117,13 @@ output1.style.display = 'inline';
              </script>
         </div>
         <div class="sideshit2">
-            <p id="output1" style="display: none;">This is the paragraph element1.</p>
-            <p id="output2" style="display: none;">This is the paragraph element2.</p>
-            <p id="output3" style="display: none;">This is the paragraph element3.</p>
-            <p id="output4" style="display: none;">This is the paragraph element4.</p>
+            <p id="output1" style="display: none;">Society kinda bad</p>
+            <p id="output2" style="display: none;">Unfortanatly a lot</p>
+            <p id="output3" style="display: none;">humanity good</p>
+            <p id="output4" style="display: none;">slavery is bad</p>
               
         </div>
+        
         
 </script>
 

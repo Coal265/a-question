@@ -28,6 +28,33 @@
             });
         });
     </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const buttons = document.querySelectorAll('.buttonStyle');
+            const paragraphs = document.querySelectorAll('.sideshit2 p');
+            let pressedButtons = [];
+
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    paragraphs.forEach(paragraph => {
+                        paragraph.style.display = 'none';
+                    });
+
+                    pressedButtons.push(this.id);
+                    
+                    if (pressedButtons.includes('button1') && pressedButtons.includes('button2') && pressedButtons.includes('button4')) {
+                        const output3 = document.getElementById('output3');
+                        output3.textContent = 'Humanity bad';
+                        
+                        const light2c = document.querySelector('.light2c img');
+                        const side = document.querySelector('.side img');
+                        light2c.src = 'blinking-light.gif'; // Replace with the new image source
+                        side.src = 'smile2.png'; // Replace with the new image source
+                    }
+                });
+            });
+        });
+    </script>
     
 </head>
 <body>

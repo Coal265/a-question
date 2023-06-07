@@ -29,31 +29,42 @@
         });
     </script>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const buttons = document.querySelectorAll('.buttonStyle');
-            const paragraphs = document.querySelectorAll('.sideshit2 p');
-            let pressedButtons = [];
-
-            buttons.forEach(button => {
-                button.addEventListener('click', function() {
-                    paragraphs.forEach(paragraph => {
-                        paragraph.style.display = 'none';
-                    });
-
-                    pressedButtons.push(this.id);
-                    
-                    if (pressedButtons.includes('button1') && pressedButtons.includes('button2') && pressedButtons.includes('button4')) {
-                        const output3 = document.getElementById('output3');
-                        output3.textContent = 'Humanity bad';
-                        
-                        const light2c = document.querySelector('.light2c img');
-                        const side = document.querySelector('.side img');
-                        light2c.src = 'blinking-light.gif'; // Replace with the new image source
-                        side.src = 'smile2.png'; // Replace with the new image source
-                    }
+     document.addEventListener("DOMContentLoaded", function() {
+        const buttons = document.querySelectorAll('.buttonStyle');
+        const paragraphs = document.querySelectorAll('.sideshit2 p');
+        let pressedButtons = [];
+    
+        buttons.forEach(button => {
+            button.addEventListener('click', function() {
+                paragraphs.forEach(paragraph => {
+                    paragraph.style.display = 'none';
                 });
+    
+                pressedButtons.push(this.id);
+    
+                if (pressedButtons.includes('button1') && pressedButtons.includes('button2') && pressedButtons.includes('button4')) {
+                    const output3 = document.getElementById('output3');
+                    output3.textContent = 'Humanity bad';
+    
+                    const button3 = document.getElementById('button3');
+                    const outputContainer = document.querySelector('.buttonc');
+    
+                    if (!button3.classList.contains('effect-applied')) {
+                        button3.style.backgroundColor = 'red';
+                        setTimeout(function() {
+                            button3.style.backgroundColor = 'rgb(157, 0, 255)';
+                            button3.classList.add('effect-applied');
+                        }, 1000);
+                    }
+    
+                    const light2c = document.querySelector('.light2c img');
+                    const side = document.querySelector('.side img');
+                    light2c.src = 'blinking-light.gif'; // Replace with the new image source
+                    side.src = 'smile2.png'; // Replace with the new image source
+                }
             });
         });
+    });
     </script>
     
 </head>
@@ -104,7 +115,12 @@ output1.style.display = 'inline';
 });
 });
      </script>
-        
+        <script>function showParagraph() {
+            var paragraph = document.getElementById('hiddenParagraph');
+            paragraph.style.display = 'inline';
+            paragraph.classList.add('typing');
+          }
+          </script>
         <div class="buttonb">
             <button class="buttonStyle"  id="button2" >How much people died in wars?</button>
         </div>
@@ -143,7 +159,9 @@ output1.style.display = 'inline';
      output1.style.display = 'inline';
    });
  });
+ 
              </script>
+             
         </div>
         <div class="sideshit2">
             <p id="output1" style="display: none;">Society kinda bad</p>

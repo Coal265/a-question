@@ -10,10 +10,13 @@
           e.preventDefault();
         });
       </script>
+      
+        
       <script>
         document.addEventListener("DOMContentLoaded", function() {
             const buttons = document.querySelectorAll('.buttonStyle');
             const paragraphs = document.querySelectorAll('.sideshit2 p');
+            let pressedButtons = [];
     
             buttons.forEach(button => {
                 button.addEventListener('click', function() {
@@ -21,51 +24,61 @@
                         paragraph.style.display = 'none';
                     });
     
-                    const outputId = this.getAttribute('data-output');
-                    const output = document.getElementById(outputId);
-                    output.style.display = 'inline';
-                });
-            });
-        });
-    </script>
-    <script>
-     document.addEventListener("DOMContentLoaded", function() {
-        const buttons = document.querySelectorAll('.buttonStyle');
-        const paragraphs = document.querySelectorAll('.sideshit2 p');
-        let pressedButtons = [];
+                    pressedButtons.push(this.id);
     
-        buttons.forEach(button => {
-            button.addEventListener('click', function() {
-                paragraphs.forEach(paragraph => {
-                    paragraph.style.display = 'none';
-                });
+                    if (pressedButtons.includes('button1') && pressedButtons.includes('button2') && pressedButtons.includes('button4')) {
+                        const output3 = document.getElementById('output3');
+                        output3.textContent = 'Humanity bad';
     
-                pressedButtons.push(this.id);
+                        const button3 = document.getElementById('button3');
+                        const outputContainer = document.querySelector('.buttonc');
     
-                if (pressedButtons.includes('button1') && pressedButtons.includes('button2') && pressedButtons.includes('button4')) {
-                    const output3 = document.getElementById('output3');
-                    output3.textContent = 'Humanity bad';
+                        if (!button3.classList.contains('effect-applied')) {
+                            button3.style.backgroundColor = 'red';
+                            setTimeout(function() {
+                                button3.style.backgroundColor = 'rgb(157, 0, 255)';
+                                button3.classList.add('effect-applied');
+                            }, 1000);
+                        }
     
-                    const button3 = document.getElementById('button3');
-                    const outputContainer = document.querySelector('.buttonc');
-    
-                    if (!button3.classList.contains('effect-applied')) {
-                        button3.style.backgroundColor = 'red';
-                        setTimeout(function() {
-                            button3.style.backgroundColor = 'rgb(157, 0, 255)';
-                            button3.classList.add('effect-applied');
-                        }, 1000);
+                        const light2c = document.querySelector('.light2c img');
+                        const side = document.querySelector('.side img');
+                        light2c.src = 'blinking-light.gif'; 
+                        side.src = 'smile2.png'; 
                     }
     
-                    const light2c = document.querySelector('.light2c img');
-                    const side = document.querySelector('.side img');
-                    light2c.src = 'blinking-light.gif'; // Replace with the new image source
-                    side.src = 'smile2.png'; // Replace with the new image source
-                }
+                    showParagraph(this.getAttribute('data-output'));
+                });
             });
+    
+            function showParagraph(paragraphId) {
+                const paragraph = document.getElementById(paragraphId);
+    
+                if (paragraph) {
+                    paragraph.style.display = 'inline';
+                    paragraph.classList.add('typing');
+    
+                    // Typewriter effect
+                    const text = paragraph.textContent;
+                    let i = 0;
+                    paragraph.textContent = '';
+    
+                    function typeWriter() {
+                        if (i < text.length) {
+                            paragraph.textContent += text.charAt(i);
+                            i++;
+                            setTimeout(typeWriter, 30); // Adjust the typing speed here (in milliseconds)
+                        }
+                    }
+    
+                    typeWriter();
+                }
+            }
         });
-    });
     </script>
+    
+    
+      
     
 </head>
 <body>
@@ -100,10 +113,10 @@
     <div class="main">
         <div class="main2">
         <div class="ai">
-            <img src="ai purple.png" alt="purple ai">
+            <img src="ai-purple.gif" alt="purple ai">
         </div>
         <div class="buttona">
-            <button class="buttonStyle" id="button1" >How does society function?</button>      
+            <button class="buttonStyle" id="button1" data-output="output1">How does society function?</button>      
   </div>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -115,14 +128,9 @@ output1.style.display = 'inline';
 });
 });
      </script>
-        <script>function showParagraph() {
-            var paragraph = document.getElementById('hiddenParagraph');
-            paragraph.style.display = 'inline';
-            paragraph.classList.add('typing');
-          }
-          </script>
+        
         <div class="buttonb">
-            <button class="buttonStyle"  id="button2" >How much people died in wars?</button>
+            <button class="buttonStyle"  id="button2" data-output="output2">How much people died in wars?</button>
         </div>
         <script>
            document.addEventListener('DOMContentLoaded', function() {
@@ -135,7 +143,7 @@ output1.style.display = 'inline';
 });
             </script>
         <div class="buttonc">
-            <button class="buttonStyle"  id="button3" >Is humanity bad?</button>
+            <button class="buttonStyle"  id="button3" data-output="output3">Is humanity bad?</button>
         </div>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
@@ -148,7 +156,7 @@ output1.style.display = 'inline';
  });
              </script>
         <div class="buttond">
-            <button class="buttonStyle"  id="button4" >What is slavery?</button>
+            <button class="buttonStyle"  id="button4" data-output="output4">What is slavery?</button>
         </div>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
@@ -164,10 +172,10 @@ output1.style.display = 'inline';
              
         </div>
         <div class="sideshit2">
-            <p id="output1" style="display: none;">Society kinda bad</p>
+            <p id="output1" style="display: none;" >Society kinda bad</p>
             <p id="output2" style="display: none;">Unfortanatly a lot</p>
-            <p id="output3" style="display: none;">humanity good</p>
-            <p id="output4" style="display: none;">slavery is bad</p>
+            <p id="output3" style="display: none;" >humanity good</p>
+            <p id="output4" style="display: none;" >slavery is bad</p>
               
         </div>
         

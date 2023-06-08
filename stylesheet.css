@@ -208,3 +208,19 @@ a.email:hover {
     text-shadow: 3px 3px 4px rgb(255, 0, 255);
     cursor: crosshair;
 }
+.typing {
+    display: inline;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 1px solid black;
+    animation: typing 0.5s steps(40, end);
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: auto;
+    }
+}

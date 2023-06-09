@@ -141,6 +141,7 @@ width: 350px;
 }
 .buttonStyle:hover {
     box-shadow: 2px 0px 50px rgb(157, 0, 255);
+    cursor: crosshair;
 }
 .buttonb {
     width: 350px;
@@ -179,6 +180,9 @@ width: 350px;
     color: rgb(171, 37, 255);
     word-break: break-all;
     white-space: normal;
+}
+.sideshit2:hover {
+    cursor: crosshair;
 }
 a.email {
     color: rgb(157, 0, 255);
@@ -223,4 +227,11 @@ a.email:hover {
     to {
         width: auto;
     }
+}
+.ai img.red {
+    display: none;
+}
+
+.ai img.red.active {
+    display: block;
 }

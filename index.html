@@ -10,72 +10,7 @@
           e.preventDefault();
         });
       </script>
-      
-        
-      <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const buttons = document.querySelectorAll('.buttonStyle');
-            const paragraphs = document.querySelectorAll('.sideshit2 p');
-            let pressedButtons = [];
     
-            buttons.forEach(button => {
-                button.addEventListener('click', function() {
-                    paragraphs.forEach(paragraph => {
-                        paragraph.style.display = 'none';
-                    });
-    
-                    pressedButtons.push(this.id);
-    
-                    if (pressedButtons.includes('button1') && pressedButtons.includes('button2') && pressedButtons.includes('button4')) {
-                        const output3 = document.getElementById('output3');
-                        output3.textContent = 'Humanity bad';
-    
-                        const button3 = document.getElementById('button3');
-                        const outputContainer = document.querySelector('.buttonc');
-    
-                        if (!button3.classList.contains('effect-applied')) {
-                            button3.style.backgroundColor = 'red';
-                            setTimeout(function() {
-                                button3.style.backgroundColor = 'rgb(157, 0, 255)';
-                                button3.classList.add('effect-applied');
-                            }, 1000);
-                        }
-    
-                        const light2c = document.querySelector('.light2c img');
-                        const side = document.querySelector('.side img');
-                        light2c.src = 'blinking-light.gif'; 
-                        side.src = 'smile2.png'; 
-                    }
-    
-                    showParagraph(this.getAttribute('data-output'));
-                });
-            });
-    
-            function showParagraph(paragraphId) {
-                const paragraph = document.getElementById(paragraphId);
-    
-                if (paragraph) {
-                    paragraph.style.display = 'inline';
-                    paragraph.classList.add('typing');
-    
-                    // Typewriter effect
-                    const text = paragraph.textContent;
-                    let i = 0;
-                    paragraph.textContent = '';
-    
-                    function typeWriter() {
-                        if (i < text.length) {
-                            paragraph.textContent += text.charAt(i);
-                            i++;
-                            setTimeout(typeWriter, 30); // Adjust the typing speed here (in milliseconds)
-                        }
-                    }
-    
-                    typeWriter();
-                }
-            }
-        });
-    </script>
     
     
       
@@ -214,5 +149,81 @@ output1.style.display = 'inline';
     <div class="contact">
         <a class="email" href="mailto:pajta.tomas@gmail.com">Contact Email</a>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const buttons = document.querySelectorAll('.buttonStyle');
+            const paragraphs = document.querySelectorAll('.sideshit2 p');
+            let pressedButtons = [];
+
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    paragraphs.forEach(paragraph => {
+                        paragraph.style.display = 'none';
+                    });
+
+                    pressedButtons.push(this.id);
+
+                    if (pressedButtons.includes('button1') && pressedButtons.includes('button2') && pressedButtons.includes('button4')) {
+                        const output3 = document.getElementById('output3');
+                        output3.textContent = 'Humanity bad';
+
+                        const button3 = document.getElementById('button3');
+                        const outputContainer = document.querySelector('.buttonc');
+
+                        if (!button3.classList.contains('effect-applied')) {
+                            button3.style.backgroundColor = 'red';
+                            setTimeout(function() {
+                                button3.style.backgroundColor = 'rgb(157, 0, 255)';
+                                button3.classList.add('effect-applied');
+                            }, 1000);
+                        }
+
+                        const light2c = document.querySelector('.light2c img');
+                        const side = document.querySelector('.side img');
+                        light2c.src = 'blinking-light.gif'; 
+                        side.src = 'smile2.png'; 
+
+                        const aiImage = document.querySelector('.ai img');
+                        aiImage.src = 'ai-red.png';
+                        aiImage.classList.add('red');
+                        setTimeout(function() {
+                            aiImage.src = 'ai-purple.gif';
+                            aiImage.classList.remove('red');
+                        }, 1000);
+                    }
+
+                    showParagraph(this.getAttribute('data-output'));
+                });
+            });
+
+            function showParagraph(paragraphId) {
+                const paragraph = document.getElementById(paragraphId);
+                const aiImage = document.querySelector('.ai img');
+
+                if (paragraph) {
+                    paragraph.style.display = 'inline';
+                    paragraph.classList.add('typing');
+
+                    // Typewriter effect
+                    const text = paragraph.textContent;
+                    let i = 0;
+                    paragraph.textContent = '';
+
+                    function typeWriter() {
+                        if (i < text.length) {
+                            paragraph.textContent += text.charAt(i);
+                            i++;
+                            aiImage.src = 'ai-purple-blinking.gif';
+                            setTimeout(typeWriter, 30); // Adjust the typing speed here (in milliseconds)
+                        } else {
+                            aiImage.src = 'ai-purple.gif';
+                        }
+                    }
+
+                    typeWriter();
+                }
+            }
+        });
+    </script>
 </body>    
 </html>

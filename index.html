@@ -9,6 +9,20 @@
         document.addEventListener('contextmenu', function(e) {
           e.preventDefault();
         });
+    </script>
+</head>
+<body>
+    <!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>A question</title>
+    <link rel="icon" type="image/x-icon" href="icon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        document.addEventListener('contextmenu', function(e) {
+          e.preventDefault();
+        });
       </script>
     
     
@@ -178,10 +192,20 @@ output1.style.display = 'inline';
                             }, 1000);
                         }
 
+                        const light1a = document.querySelector('.light1a img');
+                        const light1b = document.querySelector('.light1b img');
+                        const light1c = document.querySelector('.light1c img');
+                        const light2a = document.querySelector('.light2a img');
+                        const light2b = document.querySelector('.light2b img');
                         const light2c = document.querySelector('.light2c img');
                         const side = document.querySelector('.side img');
+                        light1a.src = 'blinking-light.gif'; 
+                        light1b.src = 'blinking-light.gif'; 
+                        light1c.src = 'blinking-light.gif'; 
+                        light2a.src = 'blinking-light.gif'; 
+                        light2b.src = 'blinking-light.gif'; 
                         light2c.src = 'blinking-light.gif'; 
-                        side.src = 'smile2.png'; 
+                        side.src = 'smile4.png'; 
 
                         const aiImage = document.querySelector('.ai img');
                         aiImage.src = 'ai-red.png';

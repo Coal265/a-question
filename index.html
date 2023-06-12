@@ -5,19 +5,25 @@
     <title>A question</title>
     <link rel="icon" type="image/x-icon" href="icon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script>
-        document.addEventListener('contextmenu', function(e) {
-            e.preventDefault();
-        });
-    </script>
+    <style>
+        .main2 .ai img {
+            width: 700px;
+            height: 700px;
+        }
+    </style>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const buttons = document.querySelectorAll('.buttonStyle');
             const paragraphs = document.querySelectorAll('.sideshit2 p');
             let pressedButtons = [];
+            let isButtonDisabled = false; // Flag variable to disable button during typing animation
 
             buttons.forEach(button => {
                 button.addEventListener('click', function() {
+                    if (isButtonDisabled) {
+                        return; // Exit if button is disabled
+                    }
+
                     paragraphs.forEach(paragraph => {
                         paragraph.style.display = 'none';
                     });
@@ -53,46 +59,50 @@
                         light2b.src = 'blinking-light.gif';
                         light2c.src = 'blinking-light.gif';
                         side.src = 'smile4.png';
-
-                        const aiImage = document.querySelector('.ai img');
-                        aiImage.src = 'ai-red.png';
-                        aiImage.classList.add('red');
-                        setTimeout(function() {
-                            aiImage.src = 'ai-purple.gif';
-                            aiImage.classList.remove('red');
-                        }, 1000);
                     }
 
+                    isButtonDisabled = true; // Disable button during typing animation
                     showParagraph(this.getAttribute('data-output'));
                 });
             });
 
             function showParagraph(paragraphId) {
                 const paragraph = document.getElementById(paragraphId);
-                const aiImage = document.querySelector('.ai-image');
 
                 if (paragraph) {
                     paragraph.style.display = 'inline';
-                    paragraph.classList.add('typing');
-
-                    // Typewriter effect
-                    const text = paragraph.textContent;
-                    let i = 0;
-                    paragraph.textContent = '';
-
-                    function typeWriter() {
-                        if (i < text.length) {
-                            paragraph.textContent += text.charAt(i);
-                            i++;
-                            aiImage.src = 'ai-purple-blinking.gif';
-                            setTimeout(typeWriter, 30); // Adjust the typing speed here (in milliseconds)
-                        } else {
-                            aiImage.src = 'ai-purple.gif';
-                        }
-                    }
-
-                    typeWriter();
+                    typewriterEffect(paragraph, function() {
+                        isButtonDisabled = false; // Enable button after typing animation finishes
+                        const aiImage = document.querySelector('.ai-image');
+                        aiImage.style.animationDuration = '1s'; // Reset animation duration to original value after typewriter effect finishes
+                    });
                 }
+            }
+
+            function typewriterEffect(element, callback) {
+                const text = element.innerText;
+                element.innerText = '';
+                let i = 0;
+
+                function type() {
+                    if (i < text.length) {
+                        if (text.charAt(i) === ' ') {
+                            element.innerHTML += '&nbsp;'; // Insert a non-breaking space
+                        } else {
+                            element.innerHTML += text.charAt(i);
+                        }
+                        i++;
+                        setTimeout(type, 5);
+                    } else {
+                        callback(); // Call the callback function when typing animation finishes
+                    }
+                }
+
+                type();
+
+                // Speed up AI-purple gif animation while typewriter effect is active
+                const aiImage = document.getElementById('aiImage');
+                aiImage.style.animationDuration = '0.5s'; // Set animation duration to 0.5 seconds
             }
         });
     </script>
@@ -129,7 +139,7 @@
     <div class="main">
         <div class="main2">
             <div class="ai">
-                <img src="ai-purple.gif" alt="purple ai" class="ai-image">
+                <img src="ai-purple.gif" alt="purple ai" class="ai-image" id="aiImage">>
             </div>
             <div class="buttona">
                 <button class="buttonStyle" id="button1" data-output="output1">How does society function?</button>
@@ -147,22 +157,20 @@
         <div class="sideshit2">
             <p id="output1" style="display: none;">Society kinda bad</p>
             <p id="output2" style="display: none;">Unfortunately, a lot</p>
-            <p id="output3" style="display: none;">Humanity has achieved remarkable advancements in various fields, such as science, technology, art, and philosophy, which have improved the quality of life for many people. However, there are also significant challenges that humanity faces, including environmental issues, social injustices, conflicts, and ethical dilemmas.
-
-                Ultimately, the assessment of humanity as "good" or "bad" is subjective and depends on one's interpretation and evaluation of its collective actions. It is essential to foster discussions and engage in efforts that promote positive change and address the issues that hinder progress and well-being.</p>
+            <p id="output3" style="display: none;">Humanity has achieved remarkable advancements in various fields, such as science, technology, art, and philosophy, which have improved the quality of life for many people. However, there are also significant challenges that humanity faces, including environmental issues, social injustices, conflicts, and ethical dilemmas.</p>
             <p id="output4" style="display: none;">Slavery is bad</p>
         </div>
     </div>
     <div class="sideshit">
         <div class="lights1">
             <div class="light1a">
-                <img src="green light.png" alt="green light">
+                <img src="green-light.png" alt="green light">
             </div>
             <div class="light1b">
-                <img src="green light.png" alt="green light">
+                <img src="green-light.png" alt="green light">
             </div>
             <div class="light1c">
-                <img src="green light.png" alt="green light">
+                <img src="green-light.png" alt="green light">
             </div>
         </div>
         <div class="side">
@@ -170,13 +178,13 @@
         </div>
         <div class="lights2">
             <div class="light2a">
-                <img src="green light.png" alt="green light">
+                <img src="green-light.png" alt="green light">
             </div>
             <div class="light2b">
-                <img src="green light.png" alt="green light">
+                <img src="green-light.png" alt="green light">
             </div>
             <div class="light2c">
-                <img src="green light.png" alt="green light">
+                <img src="green-light.png" alt="green light">
             </div>
         </div>
     </div>

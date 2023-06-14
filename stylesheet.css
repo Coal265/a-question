@@ -179,8 +179,8 @@ width: 350px;
     background-color: rgb(4, 0, 61);
     float: right;
     color: rgb(171, 37, 255);
-    word-break: break-all;
-    white-space: normal;
+    word-wrap: break-wordS;
+    
 }
 .sideshit2:hover {
     cursor: crosshair;

@@ -1,0 +1,238 @@
+#Heading {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(157, 0, 255);
+    position: relative;
+    left: 40%;
+    display: inline-block;
+    margin-bottom: 10px;
+    
+}
+#Heading:hover {
+    color: rgb(157, 0, 255);
+    text-shadow: 3px 3px 4px rgb(255, 0, 255);
+    cursor: crosshair;
+}
+body {
+    background-color: black;
+    overflow: hidden;
+}
+::selection {
+    color: rgb(255, 0, 255);
+    background-color: rgb(157, 0, 255);
+}
+.main{
+    background-color: rgb(27, 27, 27);
+    height: 800px;
+    width: 80%;
+    display: inline-block;
+    position: relative;
+}
+.sideshit {
+    float: right;
+    display: inline-block;
+    height: 800px;
+    width: 20%;
+    position: relative;
+}
+.side {
+    height: 400px;
+    width: 100%;
+    display: inline;
+    position: absolute;
+    float: right;
+    top: 200px;
+    margin: none;
+}
+.lights1 {
+    height: 200px;
+    width: 100%;
+    float: right;
+    position: absolute;
+    display: inline;
+    margin: none;
+}
+.lights2 {
+    float: right;
+    position: absolute;
+    display: inline;
+    height: 200px;
+    width: 100%;
+    margin: none;
+    top: 600px;
+}
+.contact {
+    width: 100%;
+    height: 40px;
+    background-color: rgb(0, 0, 0);
+    margin: 0%;
+}
+.light1a {
+   width: 100px;
+   height: 100px;
+   position: absolute;
+   display: inline;
+   left: 20px;
+   top: 30px;
+}
+.light1b {
+    width: 100px;
+   height: 100px;
+   position: absolute;
+   display: inline;
+   left: 140px;
+   top: 30px;
+}
+.light1c {
+    width: 100px;
+   height: 100px;
+   position: absolute;
+   display: inline;
+   left: 260px;
+   top: 30px;
+
+}
+.light2a {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    display: inline;
+    left: 20px;
+   top: 30px;
+}
+.light2b {
+    width: 100px;
+   height: 100px;
+   position: absolute;
+   display: inline;
+   left: 140px;
+   top: 30px;
+}
+.light2c {
+    width: 100px;
+   height: 100px;
+   position: absolute;
+   display: inline;
+   left: 260px;
+   top: 30px;
+}
+.ai {
+   width: 700px;
+   height: 700px;
+  
+   background-color: yellow;
+   left: 20px;
+   display: inline-block;
+   position: relative;
+   top: 40px;
+}
+
+.buttona {
+   width: 350px;
+   height: 100px;
+   position: absolute;
+   left: 750px;
+   top: 100px;
+}
+.buttonStyle {
+width: 350px;
+   height: 100px;
+   background-color: rgb(157, 0, 255);
+   font-size: 30px;
+   border: 4px solid rgb(255, 0, 255);
+}
+.buttonStyle:hover {
+    box-shadow: 2px 0px 50px rgb(157, 0, 255);
+    cursor: crosshair;
+}
+.buttonb {
+    width: 350px;
+   height: 100px;
+   background-color: greenyellow;
+   position: absolute;
+   left: 750px;
+   top: 260px;
+}  
+.buttonc {
+    width: 350px;
+   height: 100px;
+   background-color: greenyellow;
+   position: absolute;
+   left: 750px;
+   top: 430px;
+}
+.buttond {
+    width: 350px;
+   height: 100px;
+   background-color: greenyellow;
+   position: absolute;
+   left: 750px;
+   top: 590px;
+}
+.main2 {
+    width: 75%;
+    height: 800px;
+    float: left;
+}
+.sideshit2 {
+    width: 25%;
+    height: 800px;
+    background-color: rgb(4, 0, 61);
+    float: right;
+    color: rgb(171, 37, 255);
+    word-wrap: break-wordS;
+    
+}
+.sideshit2:hover {
+    cursor: crosshair;
+}
+a.email {
+    color: rgb(157, 0, 255);
+    text-decoration: none;
+    position: absolute;
+    left: 45%;
+    font-size: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+a.email:hover::after {
+    color: rgb(157, 0, 255);
+    text-shadow: 3px 3px 4px rgb(255, 0, 255);
+    cursor: crosshair;
+    opacity: 1;
+}
+a.email::after {
+  content: ":)";
+  position: absolute;
+  top: 0%;
+  left: 100%;
+  color: rgb(255, 0, 255);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+a.email:hover {
+    color: rgb(157, 0, 255);
+    text-shadow: 3px 3px 4px rgb(255, 0, 255);
+    cursor: crosshair;
+}
+.typing {
+    display: inline;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 1px solid black;
+    animation: typing 0.5s steps(40, end);
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: auto;
+    }
+}
+.ai img.red {
+    display: none;
+}
+
+.ai img.red.active {
+    display: block;
+}
